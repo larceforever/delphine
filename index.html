@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELPHINE - Digital Solutions for Your Business</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        
+        .hero .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .hero .cta {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .hero .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+        
+        /* Services */
+        .services {
+            padding: 60px 20px;
+            background: #f8f9fa;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #1a1a2e;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .service-card .price {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #16213e;
+        }
+        
+        /* Why Us */
+        .why-us {
+            padding: 60px 20px;
+        }
+        
+        .why-us h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #1a1a2e;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .benefit {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .benefit .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .benefit h4 {
+            color: #1a1a2e;
+            margin-bottom: 5px;
+        }
+        
+        .benefit p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: #1a1a2e;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .cta-section .cta {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #111;
+            color: #888;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: #25D366;
+            text-decoration: none;
+        }
+        
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        
+        .lang-toggle button {
+            background: none;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .lang-toggle button.active {
+            color: #1a1a2e;
+            font-weight: 700;
+        }
+        
+        /* Malay content hidden by default */
+        .ms { display: none; }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero .tagline { font-size: 1rem; }
+            .services h2, .why-us h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-toggle">
+        <button class="active" onclick="switchLang('en')">EN</button>
+        <button onclick="switchLang('ms')">BM</button>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>DELPHINE</h1>
+            <p class="tagline en">Automate Your Business. Save Time. Grow Faster.</p>
+            <p class="tagline ms">Automasi Perniagaan Anda. Jimat Masa. Berkembang Lebih Pantas.</p>
+            <a href="https://wa.me/60125009430" class="cta">
+                <span class="en">💬 Chat With Us</span>
+                <span class="ms">💬 Hubungi Kami</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="en">Our Services</h2>
+            <h2 class="ms">Perkhidmatan Kami</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">🤖</div>
+                    <h3 class="en">WhatsApp Automation</h3>
+                    <h3 class="ms">Automasi WhatsApp</h3>
+                    <p class="en">Auto-reply to customers 24/7. Never miss a lead. Send automatic order confirmations, reminders, and updates.</p>
+                    <p class="ms">Balas pelanggan secara automatik 24/7. Jangan lepaskan peluang jualan. Hantar pengesahan pesanan, peringatan, dan kemas kini automatik.</p>
+                    <div class="price en">From RM200</div>
+                    <div class="price ms">Dari RM200</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon">🌐</div>
+                    <h3 class="en">Website Development</h3>
+                    <h3 class="ms">Pembangunan Laman Web</h3>
+                    <p class="en">Professional websites for your business. Mobile-friendly, fast, and designed to convert visitors into customers.</p>
+                    <p class="ms">Laman web profesional untuk perniagaan anda. Mesra telefon, pantas, dan direka untuk tukar pelawat menjadi pelanggan.</p>
+                    <div class="price en">From RM300</div>
+                    <div class="price ms">Dari RM300</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon">⚡</div>
+                    <h3 class="en">Business Automation</h3>
+                    <h3 class="ms">Automasi Perniagaan</h3>
+                    <p class="en">Connect your apps and automate repetitive tasks. Orders, invoices, inventory, notifications — all on autopilot.</p>
+                    <p class="ms">Sambungkan aplikasi anda dan automasi tugas berulang. Pesanan, invois, inventori, notifikasi — semua berjalan sendiri.</p>
+                    <div class="price en">From RM300</div>
+                    <div class="price ms">Dari RM300</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="en">Why Choose Us?</h2>
+            <h2 class="ms">Kenapa Pilih Kami?</h2>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="icon">💰</div>
+                    <h4 class="en">Affordable</h4>
+                    <h4 class="ms">Mampu Milik</h4>
+                    <p class="en">SME-friendly pricing</p>
+                    <p class="ms">Harga mesra PKS</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="icon">🚀</div>
+                    <h4 class="en">Fast Delivery</h4>
+                    <h4 class="ms">Penghantaran Pantas</h4>
+                    <p class="en">Get results in days, not weeks</p>
+                    <p class="ms">Dapat hasil dalam beberapa hari</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="icon">🛠️</div>
+                    <h4 class="en">Local Support</h4>
+                    <h4 class="ms">Sokongan Tempatan</h4>
+                    <p class="en">Based in Malaysia, we speak your language</p>
+                    <p class="ms">Kami di Malaysia, kami faham anda</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="icon">🎯</div>
+                    <h4 class="en">Results-Focused</h4>
+                    <h4 class="ms">Fokus Keputusan</h4>
+                    <p class="en">We care about your ROI</p>
+                    <p class="ms">Kami ambil berat tentang pulangan anda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="en">Ready to Automate Your Business?</h2>
+            <h2 class="ms">Bersedia untuk Automasi Perniagaan Anda?</h2>
+            <p class="en">Let's discuss how we can help you save time and grow.</p>
+            <p class="ms">Mari bincang bagaimana kami boleh bantu anda jimat masa dan berkembang.</p>
+            <a href="https://wa.me/60125009430" class="cta">
+                <span class="en">📱 WhatsApp Now</span>
+                <span class="ms">📱 WhatsApp Sekarang</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 DELPHINE. All rights reserved.</p>
+        <p><a href="https://wa.me/60125009430">+60 12-500 9430</a></p>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.en, .ms').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.' + lang).forEach(el => {
+                el.style.display = 'block';
+            });
+            // Handle inline elements
+            document.querySelectorAll('span.en, span.ms').forEach(el => {
+                el.style.display = el.classList.contains(lang) ? 'inline' : 'none';
+            });
+            // Update buttons
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLang('en');
+        });
+    </script>
+</body>
+</html>
